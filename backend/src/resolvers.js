@@ -1,4 +1,4 @@
-const user = [
+const users = [
   { id: 1, name: 'Fagner', email: 'fagnermeds@gmail.com' },
   { id: 2, name: 'Maria', email: 'maria@gmail.com' },
 ];
