@@ -1,19 +1,12 @@
-const users = [
-  { id: 1, name: 'Fagner', email: 'fagnermeds@gmail.com' },
-  { id: 2, name: 'Maria', email: 'maria@gmail.com' },
-];
+const User = require('./model/User');
 
 module.exports = {
   Query: {
-    users: () => users,
-    user: (id) => {
-      const user = users.filter(user => user.id === id);
-    
-      return user;
-    },
+    users: () => User.find(),
+    user: (_, { id }) => User.findById(id),
   },
 
   Mutation: {
-    createUser: () => {},
+    createUser: (_, { name, email }) => User.create({ name, email }),
   }
 };
