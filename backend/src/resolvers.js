@@ -6,7 +6,11 @@ const users = [
 module.exports = {
   Query: {
     users: () => users,
-    user: () => users[0],
+    user: (id) => {
+      const user = users.filter(user => user.id === id);
+    
+      return user;
+    },
   },
 
   Mutation: {
